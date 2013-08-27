@@ -1,0 +1,39 @@
+<template name="application_dashboard">
+
+	<div class="container-fluid">
+		<div class="app-body span9">
+			{{> header}}
+
+			<div class="app-content">
+				<form id="tabung">
+					<section class="select-month">
+						<label for="month">Select Salary's Month</label>
+						<select name="month" id="month">
+							<option value="January">January</option>
+							<option value="February">February</option>
+							<option value="March">March</option>
+							<option value="April">April</option>
+							<option value="May">May</option>
+							<option value="June">June</option>
+							<option value="July">July</option>
+							<option value="August">August</option>
+							<option value="September">September</option>
+							<option value="October">October</option>
+							<option value="November">November</option>
+							<option value="December">December</option>
+						</select>
+						<input type="text" class="year" placeholder="Year">
+					</section>
+					<section class="salary">
+						<label for="salary">Salary Amount</label>
+						<div class="input-prepend">
+							<span class="add-on">RM</span>
+							<input class="span4" id="prependedInput" class="salary" type="text" placeholder="Salary Amount This Month">
+						</div>
+					</section>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</template>

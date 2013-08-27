@@ -1,0 +1,59 @@
+@import url(/font/fontello.css);
+/****************************/
+/** 	Variables
+/****************************/
+/****************************/
+/**		Mixin
+/***************************/
+/****************************/
+/**		Utilities
+/***************************/
+.icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+}
+
+/**
+	Layout
+**/
+html, body, #wrapper {
+  height: 100%;
+  position: relative;
+}
+
+header {
+  *zoom: 1;
+}
+header:before, header:after {
+  content: " ";
+  display: table;
+}
+header:after {
+  clear: both;
+}
+
+.main-content {
+  position: relative;
+  height: 100%;
+}
+.main-content aside {
+  background: #252932;
+  height: 100%;
+}
+.main-content aside .nav {
+  top: 70px;
+  left: 0;
+  padding: 0 20px;
+}
+.main-content section {
+  margin: 2em 0;
+}

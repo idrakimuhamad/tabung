@@ -1,0 +1,87 @@
+
+@import "/font/fontello.css";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+
+/****************************/
+/** 	Variables
+/****************************/
+
+$white 	: #fff;
+$black 	: #191C21;
+$red 	: #F56F6C;
+$darkBlue : #252932;
+$darkGreen : #195962;
+
+
+/****************************/
+/**		Mixin
+/***************************/
+
+@mixin clearfix() {
+	*zoom:1;
+	&:before, &:after { content: " "; display: table; }
+	&:after { clear: both; }
+}
+
+@mixin userSelect() {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: moz-none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+
+/****************************/
+/**		Utilities
+/***************************/
+
+.icon {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1em;
+}
+
+/**
+	Layout
+**/
+
+html, body, #wrapper {
+	height: 100%;
+	position: relative;
+}
+
+header {
+	@include clearfix();
+}
+
+.main-content {
+	position: relative;
+	height: 100%;
+	aside {
+		background: $darkBlue;
+		height: 100%;
+		.nav {
+			top: 70px;
+			left: 0;
+			padding: 0 20px;
+		}
+	}
+
+	section {
+		margin: 2em 0;
+	}
+}
