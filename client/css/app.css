@@ -25,7 +25,7 @@
 /**
 	Layout
 **/
-html, body, #wrapper {
+html, body, #wrapper, .tall {
   height: 100%;
   position: relative;
 }
@@ -41,19 +41,63 @@ header:after {
   clear: both;
 }
 
-.main-content {
+aside {
   position: relative;
-  height: 100%;
+  z-index: 3;
 }
-.main-content aside {
-  background: #252932;
-  height: 100%;
-}
-.main-content aside .nav {
-  top: 70px;
+aside .nav {
+  padding: 3em 1em 1em;
+  top: 0;
   left: 0;
-  padding: 0 20px;
+  height: 100%;
+  left: 0;
+  background: #252932;
 }
-.main-content section {
+
+.app-body {
+  margin: 1em 0;
+}
+
+section {
   margin: 2em 0;
+}
+
+.expenses-list {
+  margin: 2em 0;
+}
+.expenses-list .expense-details {
+  position: relative;
+  z-index: 1;
+  padding: 1em 0;
+  background: #195962;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-transition: -webkit-transform 0.25s, background 0.2s linear;
+  -moz-transition: -moz-transform 0.25s, background 0.2s linear;
+  -o-transition: -o-transform 0.25s, background 0.2s linear;
+  transition: transform 0.25s, background 0.2s linear;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.expenses-list .expense-details.added {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  background: white;
+}
+.expenses-list .expense-details.removed {
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+  background: #f56f6c;
+}
+.expenses-list .expense-details .close {
+  font-size: 1em;
+  font-family: cursive;
 }

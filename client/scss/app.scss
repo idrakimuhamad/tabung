@@ -59,7 +59,7 @@ $darkGreen : #195962;
 	Layout
 **/
 
-html, body, #wrapper {
+html, body, #wrapper, .tall {
 	height: 100%;
 	position: relative;
 }
@@ -68,20 +68,48 @@ header {
 	@include clearfix();
 }
 
-.main-content {
+aside {
 	position: relative;
-	height: 100%;
-	aside {
-		background: $darkBlue;
+	z-index: 3;
+	.nav {
+		padding: 3em 1em 1em;
+		top: 0;
+		left: 0;
 		height: 100%;
-		.nav {
-			top: 70px;
-			left: 0;
-			padding: 0 20px;
-		}
+		left: 0;
+		background: $darkBlue;
 	}
+}
 
-	section {
-		margin: 2em 0;
+.app-body {
+	margin: 1em 0;
+}
+
+section {
+	margin: 2em 0;
+}
+
+.expenses-list {
+	margin: 2em 0;
+	.expense-details {
+		position: relative;
+		z-index: 1;
+		padding: 1em 0;
+		background: $darkGreen;
+		border-bottom: 1px solid rgba(0,0,0, .15);
+		@include transition(transform .25s, background .2s linear);
+		@include transform(translateX(-100%));
+		&.added {
+			@include transform(translateX(0));
+			background: $white;
+		}
+		&.removed {
+			@include transform(translateX(-100%));
+			background: $red;
+		}
+		.close {
+			font-size: 1em;
+			font-family: cursive;
+		}
 	}
 }
