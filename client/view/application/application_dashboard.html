@@ -1,81 +1,22 @@
 <template name="application_dashboard">
 
-	<div class="app-body span9">
-		{{> header}}
-
-		<div class="app-content">
-			<section class="select-month">
-				<form id="month">
-					<label for="month">Select Salary's Month</label>
-					<select name="month" class="month">
-						<option value="January">January</option>
-						<option value="February">February</option>
-						<option value="March">March</option>
-						<option value="April">April</option>
-						<option value="May">May</option>
-						<option value="June">June</option>
-						<option value="July">July</option>
-						<option value="August">August</option>
-						<option value="September">September</option>
-						<option value="October">October</option>
-						<option value="November">November</option>
-						<option value="December">December</option>
-					</select>
-					<input type="text" class="year" placeholder="Year">
-				</form>
-			</section>
-
-			<section class="salary">
-				<form id="salary">
-					<label for="salary">Salary Amount</label>
-					<div class="input-prepend">
-						<span class="add-on">RM</span>
-						<input id="prependedInput" class="salary" type="text" placeholder="Salary Amount This Month">
-					</div>
-				</form>
-			</section>
-
-			<section class="expenses">
-				<p>This Month's Expenses</p>
-
-				<p>
-					{{#if add_new}}
-					<a href="#" class="btn cancel">Cancel</a>
-					{{else}}
-					<a href="#" class="btn add">Add</a>
-					{{/if}}
-				</p>
-
-				<div class="expenses-container">
-
-					{{#if add_new}}
-						{{> expenses_details}}
-					{{/if}}
-
-					{{#constant}}
-					<div class="expenses-list clearfix"></div>
-					{{/constant}}
-
+	<div class="container-fluid tall">
+		<div class="row-fluid tall">
+			{{> sidebar}}
+			<div class="app-body span9">
+				{{> header}}
+				<div class="app-content">
+					<h3>Dashboard</h3>
+					<section class="tabung-list">
+						<ul>
+							{{#each tabung_list}}
+							<li>Create on {{created}} / {{month}}</li>
+							{{/each}}
+						</ul>
+					</section>
 				</div>
-			</section>
-
-			<div>
-				<a href="#" class="submit-month btn">Submit This</a>
 			</div>
 		</div>
 	</div>
 
-</template>
-
-<template name="expenses_details">
-	{{#isolate}}
-	<form id="expense" class="form-inline">
-		<input type="text" class="expense-title" placeholder="Expenses Title">
-		<div class="input-prepend">
-			<span class="add-on">RM</span>
-			<input type="text" id="prependedInput" class="expense-amount" placeholder="Amount">
-		</div>
-		<input type="submit" class="add-expense btn" value="Add This">
-	</form>
-	{{/isolate}}
 </template>
