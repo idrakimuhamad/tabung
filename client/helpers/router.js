@@ -8,6 +8,8 @@ Meteor.Router.beforeRouting = function() {
 
 Meteor.Router.add({
 
-	'/' : 'application',
+	'/' : 'application_dashboard',
+
+	'/creator' : 'application'
 
 });
