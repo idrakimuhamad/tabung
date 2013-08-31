@@ -57,6 +57,9 @@ aside .nav {
 .app-body {
   margin: 1em 0;
 }
+.app-body .app-content {
+  margin: 0 0 5em;
+}
 
 section {
   margin: 2em 0;

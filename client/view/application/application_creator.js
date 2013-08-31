@@ -16,9 +16,9 @@ Template.application_creator.events({
 	'click .add' : function(e,t) {
 		e.preventDefault();
 
-		$('.expense-title').focus();
-
 		Session.set('add_new', true);
+
+		$('.expense-title').focus();
 	},
 	'click .cancel' : function(e,t) {
 		e.preventDefault();
